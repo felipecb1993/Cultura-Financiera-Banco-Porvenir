@@ -1,0 +1,115 @@
+<!doctype html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>¿Quien quiere ser financiero?</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<style>
+		.container{
+    width: 414px;
+    height: 480px;
+    background-color: hsla(359,100%,45%,0.00);
+    padding-left: 40px;
+    padding-top: 36px;
+    border-radius: 10px;
+		}
+.loginButton {
+    background-color: rgba(255,255,255,0.00);
+    border-radius: 20px;
+    text-indent: 0;
+    border: 2px solid #FFFFFF;
+    display: inline-block;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    height: 44px;
+    line-height: 44px;
+    width: 250px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 41px;
+    margin-top: 3px;
+}.loginButton:hover {
+	background-color: rgba(255,255,255,0.00);
+    border-color: orange;
+}.loginButton:active {
+	position:relative;
+	top:1px;
+}
+
+#Nombre{
+    border-radius: 18px;
+}
+
+#Ciudad{
+    border-radius: 18px;
+}
+
+.Titulos{
+    font-size: 11px;
+    text-align: left;
+    float: left;
+    width: 257px;
+    color: white;
+    margin-left: 31px;
+    margin-top: 3px;
+}
+
+#Terminos{
+    margin-left: -290px;
+    margin-top: -13px;
+		}
+	</style>
+
+<script>
+    function submit_form()
+    {
+
+     var data1=$("#Nombre").val();
+     var data2=$("#Ciudad").val();
+     var data3=$("#Edad").val();
+     var data4=$("#Correo").val();;
+      console.log("click");
+
+      if(data1 != '' && data2 != '' && data3 != '' && data4 != '' && $("#Terminos").is(':checked')){
+        //     //var dataTosend='name='+data1+'lastname='+data2+'age='+data3+'mail='+data4;
+       $.ajax({
+                type: 'POST',
+                url: 'Formulario1.php',
+                data: {Nombre: data1, Apellido: data2, Edad: data3, Correo: data4},
+                    //async: true,
+                success: function(response){
+                $('#result').html(response);
+                    },  
+                });
+        }
+    }
+
+ </script>
+</head>
+	
+<body>
+	<div id="Ingreso">
+
+		<div class="container">
+		<form method="post">
+			
+			<label for="Nombre" style="color: white">Nombre</label><br>
+	  		<input name="Nombre" type="text" class="w3-input w3-animate-input" id="Nombre" placeholder="" style="width:89%; max-width:89%" required><br>
+            
+			<label for="Ciudad" style="color: white">Ciudad</label><br>
+            <input name="Ciudad" type="text" class="w3-input w3-animate-input" id="Ciudad" placeholder="" style="width:89%; max-width:89%" required><br><br>
+
+			<label for="Terminos" class="Titulos">Al hacer clic autorizo el <a href="https://d6df3189-d892-48ae-b5bb-cb30220c6e42.filesusr.com/ugd/59a0d2_7d24af52597c41c0a1777f4c8d00e9f0.pdf" target="_blank">uso de mis datos</a></label><input type="checkbox" class="w3-check" id="Terminos" name="Terminos" required><br><br>
+            
+	  		<!-- <input type="button" onclick="submit_form();" value="CONTINUAR" class="loginButton" name="loginButton"> -->
+	  		<input type="button" value="Continuar" class="loginButton" name="loginButton">
+		</form>
+
+		</div>
+	</div>
+</body>
+</html>
