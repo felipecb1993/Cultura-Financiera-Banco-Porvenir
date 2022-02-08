@@ -51,7 +51,7 @@ export default class Nivel1Inicio extends Phaser.Scene {
 		this.load.spritesheet('ContinuarNivel2', 'assets/Imagenes/ContinuarNivel2Sprites.png', {frameWidth: 320.3, frameHeight: 54});
 		this.load.spritesheet('ContinuarNivel3', 'assets/Imagenes/ContinuarNivel3Sprites.png', {frameWidth: 320.3, frameHeight: 54});
 
-		this.load.spritesheet('FondoProgreso', 'assets/Imagenes/FondoProgreso.png', {frameWidth: 470, frameHeight: 79});
+		this.load.spritesheet('FondoProgreso', 'assets/Imagenes/FondoProgreso.png', {frameWidth: 235, frameHeight: 40});
 		this.load.spritesheet('FondoOportunidades', 'assets/Imagenes/FondoOportunidades.png', {frameWidth: 265.25, frameHeight: 77});
 		this.load.spritesheet('FondoRespuesta', 'assets/Imagenes/FondoRespuesta.png', {frameWidth: 402.5, frameHeight: 82});
 		this.load.spritesheet('FondoRespuestaNivel2', 'assets/Imagenes/FondoRespuestaNivel2.png', {frameWidth: 402.5, frameHeight: 82});

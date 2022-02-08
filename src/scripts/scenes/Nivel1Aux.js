@@ -131,7 +131,7 @@ export default class Nivel1Aux extends Phaser.Scene {
 		FondoJustificacionNivel2.setVisible(false);
 		FondoJustificacionNivel3.setVisible(false);
 
-		Progreso = this.add.sprite(130, 40, 'FondoProgreso').setScale(0.45);
+		Progreso = this.add.sprite(130, 40, 'FondoProgreso').setScale(0.9);
 		Progreso.setFrame(Puntaje);
 		Oportunidades = this.add.sprite(715, 40, 'FondoOportunidades').setScale(0.45);
 		Oportunidades.setFrame(OportunidadesCont);
